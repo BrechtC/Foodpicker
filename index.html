@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FOODPICKER</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+</head>
+<style>
+    .alert.warning {
+        background-color: #ff9800;
+    }
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        background-color: transparent;
+        border: 3px solid #FFFF;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    body,
+    h1 {
+        font-family: "Raleway", sans-serif
+    }
+
+    body,
+    html {
+        height: 100%
+    }
+
+    .bgimg {
+        background-image: url(achtergrond.jpg);
+        min-height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+</style>
+
+<body onload="onDeviceReady()">
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-topleft w3-padding-large w3-xlarge" id="title">
+            FOODPICKER
+        </div>
+        <div class="w3-display-middle w3-center">
+            <form onsubmit="return false" id="contactForm">
+                Add food you like<br>
+                <input type="text" class="w3-center w3-text-white " id="name" value="">
+                <br>
+                <input class="w3-button w3-circle w3-teal w3-margin w3-padding-medium" type="submit" value="+" onclick="submitForm()" id="add">
+            </form>
+
+            <button class="w3-button w3-teal" type="button" onclick="getRandom()">Pick food!</button>
+            <input type="text" class="w3-center w3-text-white" id="getName" value="">
+            <button class="w3-button w3-teal" type="button" onclick="saveName()">verander naam</button>
+            <div id="vreet" class=" w3-xlarge"></div>
+        </div>
+
+
+
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase-database.js"></script>
+    <script src="main.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+
+</body>
+
+</html>
